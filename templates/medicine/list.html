@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>药品管理系统</title>
+    <link rel="stylesheet" href="../../static/css/stock.css"/>
+    <link rel="stylesheet" href="../../static/css/style.css"/>
+</head>
+<body>
+<!--头部-->
+<header class="publicHeader">
+    <h1>药品管理系统</h1>
+    <div class="publicHeaderR">
+        <p>
+             <span id="hours"></span>
+            <span style="color: #fff21b"> {{ name }}</span>用户 , 欢迎你！</p>
+        <a href="/logout">退出</a>
+    </div>
+</header>
+<!--时间-->
+<section class="publicTime">
+    <span id="time"></span>
+    <a href="#">温馨提示：为了能正常浏览，请使用google浏览器！</a>
+</section>
+<!--主体内容-->
+<section class="publicMian ">
+    <div class="left">
+        <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+        <nav>
+            <ul class="list">
+                <li><a href="/list">明细页面</a></li>
+                <li><a href="/index">返回首页</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="right">
+        <div class="location">
+            <strong>你现在所在的位置是:</strong>
+            <span>明细页面</span>
+        </div>
+        <form method="post">
+            <div class="search">
+                <span>药品编码：</span>
+                <input type="text" placeholder="例如:0050009" name="id"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="查询" formaction="/search"/>
+            </div>
+        </form>
+        <div style="overflow: scroll;height: 560px;width: auto;">
+            <table class="providerTable" cellpadding="0" cellspacing="0"
+                   style="position: relative;top: 8px;width: auto;left: 0px;">
+                <tr class="firstTr">
+                    <th>药品编码</th>
+                    <th>药品名称</th>
+                    <th>规格</th>
+
+                    <th>条码</th>
+                    <th>批准文号</th>
+                    <th>主采购员</th>
+                    <th>处方药类型</th>
+                    <th>装箱规格</th>
+                    <th>库存数量</th>
+                    <th>可开数量</th>
+                    <th>平均成本价</th>
+                    <th>成本价</th>
+                    <th>扩展批次2</th>
+                    <th>操作</th>
+                </tr>
+                {% for stock in stock_list  %}
+                <tr>
+                    <td>{{ stock[0] }}</td>
+                    <td>{{ stock[1] }}</td>
+                    <td>{{ stock[2] }}</td>
+
+                    <td>{{ stock[4] }}</td>
+                    <td>{{ stock[5] }}</td>
+                    <td>{{ stock[6] }}</td>
+                    <td>{{ stock[7] }}</td>
+                    <td>{{ stock[8] }}</td>
+                    <td>{{ stock[9] }}</td>
+                    <td>{{ stock[10] }}</td>
+                    <td>{{ stock[11] }}</td>
+                    <td>{{ stock[12] }}</td>
+                    <td>{{ stock[13] }}</td>
+                    <td>{{ stock[14] }}</td>
+                    <td>
+                        <a href="/edit?id={{ stock[0]}}"><img src="../../static/img/xiugai.png" alt="修改" title="修改"/></a>
+                        <!--
+                        <a href="/delete?id={{ stock[0] }}"><img src="../../static/img/schu.png" alt="删除" title="删除"/></a>
+                        -->
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</section>
+<!--点击删除按钮后弹出的页面-->
+ <footer class="footer">
+        <div class="company">欢迎来到网站</div>
+        <div class="record"></div>
+        <div class="desc">电话：4008000000 | 邮箱：support@21epub.com</div>
+    </footer>
+    <script src="../../static/js/jquery.js"></script>
+    <script src="../../static/js/js.js"></script>
+    <script src="../../static/js/time.js"></script>
+</body>
+</html>

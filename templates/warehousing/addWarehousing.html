@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>仓库管理系统</title>
+    <link rel="stylesheet" href="../../static/css/warehousing.css" type = "text/css"/>
+    <link rel="stylesheet" href="../../static/css/style.css" type = "text/css"/>
+</head>
+<body>
+<!--头部-->
+<header class="publicHeader">
+    <h1>仓库管理系统</h1>
+    <div class="publicHeaderR">
+        <p>
+             <span id="hours"></span>
+            <span style="color: #fff21b"> {{ name }}</span>管理员 , 欢迎你！</p>
+        <a href="/logout">退出</a>
+    </div>
+</header>
+<!--时间-->
+<section class="publicTime">
+    <span id="time"></span>
+    <a href="#">温馨提示：为了能正常浏览，请使用google浏览器！</a>
+</section>
+<!--主体内容-->
+<section class="publicMian " >
+    <div class="left">
+        <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+        <nav>
+            <ul class="list">
+                <li><a href="/addWarehousing">货物入库页面</a></li>
+                <li><a href="/list_warehousing">入库明细页面</a></li>
+                <li><a href="/index">返回首页</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="right">
+        <div class="location">
+            <strong>你现在所在的位置是:</strong>
+            <span>进货管理页面</span>
+        </div>
+        <div class="providerAdd">
+            <form action="/add_goods" method="post" style="text-align: center;">
+                <div>
+                    <label>货物名称：</label>
+                    <input type="text" name="add_goods" id="add_goods" required/>
+                </div>
+                <div>
+                    <label>货物数量：</label>
+                    <input type="text" name="add_number" id="add_number" required/>
+                </div>
+                <div class="providerAddBtn">
+                    <input type="submit" value="确&nbsp;认" style=" width: 88px;height: 42px;position: absolute;center: 745px;top: 254px;font-size: 20px;">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+    <footer class="footer">
+        <div class="company">欢迎来到网站</div>
+        <div class="record"></div>
+        <div class="desc">电话：4008000000 | 邮箱：support@21epub.com</div>
+    </footer>
+    <script src="../../static/js/jquery.js"></script>
+    <script src="../../static/js/js.js"></script>
+    <script src="../../static/js/time.js"></script>
+</body>
+</html>

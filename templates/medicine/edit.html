@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>药品管理系统</title>
+    <link rel="stylesheet" href="../../static/css/stock.css"/>
+    <link rel="stylesheet" href="../../static/css/style.css"/>
+</head>
+<body>
+<!--头部-->
+<header class="publicHeader">
+    <h1>药品管理系统</h1>
+    <div class="publicHeaderR">
+        <p>
+             <span id="hours"></span>
+            <span style="color: #fff21b"> {{ name }}</span>用户 , 欢迎你！</p>
+        <a href="/logout">退出</a>
+    </div>
+</header>
+<!--时间-->
+<section class="publicTime">
+    <span id="time"></span>
+    <a href="#">温馨提示：为了能正常浏览，请使用google浏览器！</a>
+</section>
+<!--主体内容-->
+<section class="publicMian ">
+    <div class="left">
+        <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
+        <nav>
+            <ul class="list">
+                <li><a href="/list">明细页面</a></li>
+                <li><a href="/index">返回首页</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="right">
+        <div class="location">
+            <strong>你现在所在的位置是:</strong>
+            <span>明细修改页面</span>
+        </div>
+        <div class="providerAdd">
+            <form action="/edit" method="post" style="text-align: center;">
+                <div>
+                    <label>药品编码：</label>
+                    <input type="text" name="id" value="{{ stock[0] }}" required/>
+                </div>
+                <div>
+                    <label>药品名称：</label>
+                    <input type="text" name="name" value="{{ stock[1] }}" required/>
+                </div>
+                <div>
+                    <label>平均成本价：</label>
+                    <input type="text" name="average_cost" value="{{ stock[2] }}" required/>
+                </div>
+                <div>
+                    <label>成本价：</label>
+                    <input type="text" name="cost" value="{{ stock[3] }}" required/>
+                </div>
+                <div>
+                    <label>扩展批次2：</label>
+                    <input type="text" name="other" value="{{ stock[4] }}" required/>
+                </div>
+                <div class="providerAddBtn">
+                    <input type="submit" value="确&nbsp;认" style="width: 88px;height: 42px;position: absolute;center: 745px;top: 380px;font-size: 20px;">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+ <footer class="footer">
+        <div class="company">欢迎来到网站</div>
+        <div class="record"></div>
+        <div class="desc">电话：4008000000 | 邮箱：support@21epub.com</div>
+    </footer>
+    <script src="../../static/js/jquery.js"></script>
+    <script src="../../static/js/js.js"></script>
+    <script src="../../static/js/time.js"></script>
+</body>
+</html>
+
+

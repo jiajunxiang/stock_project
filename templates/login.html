@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>管理系统-用户登录</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/login.css">
+</head>
+<body class="login_bg">
+<div class="login-main">
+    <div class="logo"><img src="../static/img/logo.jpg" alt=""/></div>
+    <div class="header">补货管理系统</div>
+    <form action="/" method="post" class="simpleui-form">
+        <div class="simpleui-input-inline">
+            <div class="el-input el-input--prefix">
+                <label>
+                    <input type="text" autocomplete="off"
+                           name="name" placeholder="账号" autofocus="autofocus" class="el-input__inner" required/>
+                </label>
+            </div>
+        </div>
+        <div class="simpleui-input-inline">
+            <div class="el-input el-input--prefix el-input--suffix"><!---->
+                <label>
+                    <input type="password" autocomplete="off"
+                           name="password" placeholder="密码" class="el-input__inner" required/>
+                </label>
+                <span class="el-input__prefix"></span>
+                <span class="el-input__suffix">
+                    <span class="el-input__suffix-inner"><!----><!----><!----><!----></span>
+                </span>
+            </div>
+        </div>
+        <div class="simpleui-input-inline login-btn">
+            <button type="submit" class="el-button el-button--primary">
+                <span>登录</span>
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
